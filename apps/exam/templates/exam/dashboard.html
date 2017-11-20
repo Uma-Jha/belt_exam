@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Friends</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  {% load staticfiles %}
+ <link rel="stylesheet" href="{% static 'exam/style.css' %}">
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-5 col-md-offset-1">
+			<h3>Hello, {{user.name}}!</h3>
+			{% if friends %}
+				<p>Here is a list of your friends:</p>
+				<table class= "table table-striped">
+					<thead>
+						<th class="col-md-2">Alias</th>
+						<th class="col-md-3">Action</th>
+					</thead>
+					<tbody>
+						{% for f in friends %}
+						<tr>
+							<td class="col-md-2">{{f.alias}}</td>
+							<td class="col-md-3"><a href="user/{{f.id}}">View Profile</a><a href="removeFriend/{{f.id}}">Remove as Friend</a></td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% else %}
+				<h4>You don't have any friends yet!</h4>
+			{% endif %}
+			{% if notFriends %}
+				<p>Other users not on your friend's list:</p>
+				<table class= "table table-striped">
+					<thead>
+						<th>Alias</th>
+						<thead>Action</thead>
+					</thead>
+					<tbody>
+						{% for f in notFriends %}
+						<tr>
+							<td><a href="user/{{f.id}}">{{f.alias}}</a></td>
+							<td><a href="addFriend/{{f.id}}">Add as Friend</a></td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% endif %}
+		</div>
+		<div class="col-md-1 col-md-offset-5">
+			<a class="bold space" href="/">Logout</a>
+		</div>
+	</div>
+</body>
+</html>

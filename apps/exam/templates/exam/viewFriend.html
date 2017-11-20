@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{friend.alias}}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  {% load staticfiles %}
+ <link rel="stylesheet" href="{% static 'exam/style.css' %}">
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-1 pull-right"><a class="bold" href="/">Logout</a></div>
+		<div class="col-md-1 col-md-offset-10 pull-right"><a class="bold" href="/friends">Home</a></div>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<h3>{{friend.alias}}'s Profile</h3>
+			<h4>Name: {{friend.name}}</h4>
+			<h4>Email Address: {{friend.email}}</h4>
+		</div>
+	</div>
+</body>
+</html>

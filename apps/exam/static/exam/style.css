@@ -1,0 +1,22 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.warning{
+	margin-left: 30px;
+	margin-top: 10px;
+	color: red;
+	font-weight: bold;
+}
+.bg{
+	background-color: #3CB371;
+}
+.bold{
+	font-weight: bold;
+}
+table a{
+	margin-right: 15px;
+}
+.space{
+	margin-top: 10px;
+}
